@@ -1229,8 +1229,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4152612117939290770}
+  - component: {fileID: 7097675547459636937}
   m_Layer: 0
-  m_Name: Player2_Prefab
+  m_Name: Enemy_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1258,6 +1259,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &7097675547459636937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4152612117939290769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c9886a38dad1b4fa62e40c3cd3d051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomRangeMin: 0.5
+  randomRangeMax: 2
+  speed: 4
 --- !u!1 &4152612118103468643
 GameObject:
   m_ObjectHideFlags: 0
