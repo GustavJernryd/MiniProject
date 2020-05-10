@@ -8,8 +8,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private GameObject PlayerCamera;
     [SerializeField] private GameObject CinematicCamera;
 
-    
-
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +29,13 @@ public class CameraManager : MonoBehaviour
         PlayerCamera.SetActive(false);
         CinematicCamera.SetActive(true);
         CameraAnimator.Play("Camera_Rotation_Animation",0,0f);
+    }
+
+    public void PlayPanningAnimation()
+    {
+        PlayerCamera.SetActive(false);
+        CinematicCamera.SetActive(true);
+        CameraAnimator.Play("Camera_Panning_Animation", 0, 0f);
     }
 
     public void EndAnimationSequence()
