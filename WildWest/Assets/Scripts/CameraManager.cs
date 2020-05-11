@@ -4,11 +4,31 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    public static CameraManager instance;
+
+
     private Animator CameraAnimator;
     [SerializeField] private GameObject PlayerCamera;
     [SerializeField] private GameObject CinematicCamera;
 
-   
+    void Awake()
+    {
+        MakeCameraManager();
+    }
+
+    void MakeCameraManager()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +40,7 @@ public class CameraManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
-            StartRotateAnimation();
+            PlayPanningAnimation();
         }
     }
 

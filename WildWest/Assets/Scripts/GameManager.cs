@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameState gameState;
     public GameState oldGameState;
     private Text text;
+    private bool firstTransition;
     void Awake()
     {
         MakeGameManager();
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CameraManager.instance.PlayPanningAnimation();
         timeLimit = 3f;
         timeElapsed = 0;
         gameState = GameState.Menu;
@@ -57,10 +59,17 @@ public class GameManager : MonoBehaviour
                 {
                     gameState = GameState.Countdown;
                     canvas.SetActive(true);
-
+                    CameraManager.instance.EndAnimationSequence();
+                    firstTransition = true;
                 }
                 break;
             case GameState.Countdown:
+                if(firstTransition)
+                {
+                    CameraManager.instance.StartRotateAnimation();
+                    Debug.Log("RotateAnim");
+                    firstTransition = false;
+                }
                 timeElapsed += Time.deltaTime;
                 if(timeElapsed < 1)
                 {
@@ -84,6 +93,8 @@ public class GameManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
                     gameState = GameState.Menu;
+                    CameraManager.instance.PlayPanningAnimation();
+
                 }
                 break;
         }
