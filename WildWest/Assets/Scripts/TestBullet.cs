@@ -18,3 +18,4 @@ public class TestBullet : MonoBehaviour
         transform.position += transform.forward * speed * Time.deltaTime;
     }
 }
+
