@@ -9789,10 +9789,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5009078833304619589}
+  - component: {fileID: 162547806018794915}
   - component: {fileID: 1664635942}
+  - component: {fileID: 1664635943}
   - component: {fileID: 1664635944}
-  - component: {fileID: 1123280526}
-  - component: {fileID: 1123280528}
   m_Layer: 0
   m_Name: Player1_Prefab
   m_TagString: Bullet_SpawnPos_Player1
@@ -9824,6 +9824,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &162547806018794915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009078833304619586}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ace45196710dd4479ef49e1bfb6a0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet_Prefab: {fileID: 7746738808477251069, guid: 78b4b80f8119c244ea6b64af0be14336,
+    type: 3}
+  camera: {fileID: 8472075596170148568}
 --- !u!143 &1664635942
 CharacterController:
   m_ObjectHideFlags: 0
@@ -9842,6 +9857,21 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.87, z: 0}
+--- !u!114 &1664635943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009078833304619586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2644cb72bd86a554da28710740a6f24e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 7746738808477251069, guid: 78b4b80f8119c244ea6b64af0be14336,
+    type: 3}
+  firePoint: {fileID: 836495121093065008}
 --- !u!114 &1664635944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9857,34 +9887,6 @@ MonoBehaviour:
   charCont: {fileID: 1664635942}
   speed: 4
   movableY: 0
---- !u!114 &1123280526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5009078833304619586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9ae473fb16e4e64e99c6b6d6d0daf9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 7746738808477251069, guid: 78b4b80f8119c244ea6b64af0be14336,
-    type: 3}
-  playerCamera: {fileID: 8472075596170148568}
---- !u!114 &1123280528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5009078833304619586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bd7926e77c843049a14d1cb398c36e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
 --- !u!1 &5009078833527032851
 GameObject:
   m_ObjectHideFlags: 0

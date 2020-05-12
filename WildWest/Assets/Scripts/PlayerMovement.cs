@@ -35,10 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
             movement = new Vector3(direction.x, 0, direction.y);
             charCont.Move(movement * speed * Time.deltaTime);
-
-            float mouseInput = Input.GetAxis("Mouse X");
-            Vector3 lookhere = new Vector3(0, mouseInput, 0);
-            transform.Rotate(lookhere);
         }
     }
 
