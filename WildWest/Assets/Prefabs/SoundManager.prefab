@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3847050934769710192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3847050934769710198}
+  - component: {fileID: 3847050934769710193}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3847050934769710198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3847050934769710192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3847050934769710193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3847050934769710192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c60d61bb0d24d34e9f7fd94564a590d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Harmonica
+    clip: {fileID: 8300000, guid: 6280f5c6650e29448a5f09e70a048a26, type: 3}
+    mixer: {fileID: 24300002, guid: 103d158933687bc44a3013ab6a30303f, type: 2}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 2eb25e65b2f92d140bd347327fbd4d3a, type: 3}
+    mixer: {fileID: 24300002, guid: 103d158933687bc44a3013ab6a30303f, type: 2}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: badf1ec1b87f94c4aafb88bb1ac78bb3, type: 3}
+    mixer: {fileID: 24300002, guid: 103d158933687bc44a3013ab6a30303f, type: 2}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: BackgroundMusic
+    clip: {fileID: 8300000, guid: b4a4aebf578e6d84f9192304d61ca345, type: 3}
+    mixer: {fileID: 24300002, guid: 103d158933687bc44a3013ab6a30303f, type: 2}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: BackgroundMusic2
+    clip: {fileID: 8300000, guid: 1e7dc01b7326d114481a7c4c6885e649, type: 3}
+    mixer: {fileID: 24300002, guid: 103d158933687bc44a3013ab6a30303f, type: 2}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: GunShot
+    clip: {fileID: 8300000, guid: 4ed6c940941166344bae58480b167132, type: 3}
+    mixer: {fileID: 24300002, guid: 103d158933687bc44a3013ab6a30303f, type: 2}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}

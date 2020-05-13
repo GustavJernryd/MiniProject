@@ -22,5 +22,6 @@ public class Shoot : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position,Quaternion.identity);
         Destroy(bullet, 10f);
         Debug.Log("BAM!!!!");
+        SoundManager.instance.Playvaryingsound("GunShot");
     }
 }

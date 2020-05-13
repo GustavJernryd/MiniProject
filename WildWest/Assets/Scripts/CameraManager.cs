@@ -59,7 +59,8 @@ public class CameraManager : MonoBehaviour
     }
 
     public void EndAnimationSequence()
-    {  
+    {
+        CameraAnimator.StopPlayback();
         PlayerCamera.SetActive(true);
         CinematicCamera.SetActive(false);
     }
