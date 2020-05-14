@@ -14,6 +14,7 @@ public class CameraManager : MonoBehaviour
     void Awake()
     {
         MakeCameraManager();
+        CameraAnimator = GetComponent<Animator>();
     }
 
     void MakeCameraManager()
@@ -32,7 +33,7 @@ public class CameraManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CameraAnimator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
