@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
         gameState = GameState.Menu;
         oldGameState = GameState.Menu;
         canvas = GameObject.Find("Canvas_Countdown");
-        canvas.SetActive(false);
+        canvas.SetActive(true);
+        canvas.GetComponentInChildren<Text>().enabled = false;
         text = canvas.GetComponentInChildren<Text>();
      }
 
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         oldGameState = gameState;
         switch (gameState)
         {
@@ -58,13 +60,18 @@ public class GameManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     gameState = GameState.Countdown;
-                    canvas.SetActive(true);
                     CameraManager.instance.EndAnimationSequence();
                     firstTransition = true;
+                    canvas.GetComponentInChildren<Text>().enabled = true;
+                    foreach(Image i in canvas.GetComponentsInChildren<Image>())
+                    {
+                        i.enabled = false;
+                    }
                 }
                 break;
             case GameState.Countdown:
-                if(firstTransition)
+                Debug.Log("RotateAnim");
+                if (firstTransition)
                 {
                     CameraManager.instance.StartRotateAnimation();
                     Debug.Log("RotateAnim");
@@ -86,7 +93,11 @@ public class GameManager : MonoBehaviour
                 {
                     timeElapsed = 0;
                     gameState = GameState.Running;
-                    canvas.SetActive(false);
+                    canvas.GetComponentInChildren<Text>().enabled = false;
+                    foreach (Image i in canvas.GetComponentsInChildren<Image>())
+                    {
+                        i.enabled = false;
+                    }
                 }
                 break;
             case GameState.Running:
@@ -94,7 +105,10 @@ public class GameManager : MonoBehaviour
                 {
                     gameState = GameState.Menu;
                     CameraManager.instance.PlayPanningAnimation();
-
+                    foreach (Image i in canvas.GetComponentsInChildren<Image>())
+                    {
+                        i.enabled = true;
+                    }
                 }
                 break;
         }

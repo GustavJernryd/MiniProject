@@ -20,7 +20,7 @@ public class EnemyAI : MonoBehaviour
         leftBoundary = transform.position;
         leftBoundary.x -= 10;
         rightBoundary = transform.position;
-        rightBoundary.x += 10;
+        rightBoundary.x += 7;
 
         currentState = MovingState.Idle;
         timeElapsed = 0;
