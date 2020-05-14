@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class Hit : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
-            Debug.Log("hit");
-    }
 
+        if(collision.collider.tag == "House")
+        {
+            Physics.IgnoreLayerCollision(8, 9);
+        }
+
+        else
+        {
+            Debug.Log("hit");
+            Destroy(collision.collider.gameObject);
+            Destroy(this.gameObject);
+        }
+    }
+           
 }
