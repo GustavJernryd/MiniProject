@@ -6,8 +6,6 @@ TagManager:
   tags:
   - Bullet_SpawnPos_Player2
   - Bullet_SpawnPos_Player1
-  - Enemy
-  - House
   layers:
   - Default
   - TransparentFX
@@ -17,8 +15,8 @@ TagManager:
   - UI
   - 
   - 
-  - House
-  - Bullet
+  - 
+  - 
   - 
   - 
   - 

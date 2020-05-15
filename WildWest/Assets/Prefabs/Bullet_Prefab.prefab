@@ -9,11 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8314839278585128541}
+  - component: {fileID: -7473388943631731007}
   - component: {fileID: 8671135915797376115}
-  - component: {fileID: -2045715251847869170}
-  - component: {fileID: -6803734073297973704}
-  - component: {fileID: 394399432403441022}
-  m_Layer: 9
+  - component: {fileID: 137655441776651334}
+  m_Layer: 0
   m_Name: Bullet_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,14 +26,33 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7746738808477251069}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.54, y: 0.0037685, z: 0.72774166}
-  m_LocalScale: {x: 5.02, y: 5.02, z: 5.02}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.65274, y: 0.0010756, z: 0.08944}
+  m_LocalScale: {x: 2.1399999, y: 2.1399999, z: 2.1399999}
   m_Children:
   - {fileID: 2506555822319367419}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &-7473388943631731007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7746738808477251069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd0ddfa6879fe1418d0105b01e73dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sf_Bullet_Speed: 60
+  bullet_prefab: {fileID: 7746738808477251069}
+  sf_Player1_Prefab: {fileID: 5009078833304619586, guid: 5cdc2d78883ec3448968402e6368a846,
+    type: 3}
+  sf_Player2_Prefab: {fileID: 4152612117939290769, guid: 585e1cec11b47cc458a2c195f1aecc8e,
+    type: 3}
+  bulletList: []
 --- !u!65 &8671135915797376115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43,37 +61,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7746738808477251069}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.115704656, y: 0.10940236, z: 0.43797532}
-  m_Center: {x: 0.0017897779, y: 0.0017881512, z: 0.21802463}
---- !u!114 &-2045715251847869170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746738808477251069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bd7926e77c843049a14d1cb398c36e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
---- !u!114 &-6803734073297973704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746738808477251069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce204f084dd420a4482dc528e127353b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!54 &394399432403441022
+  m_Size: {x: 0.4933721, y: 0.13679022, z: 0.15171316}
+  m_Center: {x: 0.22215901, y: 0.0034802465, z: -0.005336836}
+--- !u!54 &137655441776651334
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,17 +112,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 15be8baa3292cd54290887b86fd5a2bf,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7071068
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 15be8baa3292cd54290887b86fd5a2bf,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 15be8baa3292cd54290887b86fd5a2bf,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 15be8baa3292cd54290887b86fd5a2bf,
         type: 3}
@@ -144,7 +137,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 15be8baa3292cd54290887b86fd5a2bf,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 15be8baa3292cd54290887b86fd5a2bf,
         type: 3}
@@ -171,20 +164,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 960211c21d4dd0b4790ee1e53121ee6c, type: 2}
-    - target: {fileID: -1569911813358655046, guid: 15be8baa3292cd54290887b86fd5a2bf,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 15be8baa3292cd54290887b86fd5a2bf,
         type: 3}
       propertyPath: m_Name
       value: Maya_WildWest_Bullet_Model
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 15be8baa3292cd54290887b86fd5a2bf,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7150216053726872578, guid: 15be8baa3292cd54290887b86fd5a2bf,
         type: 3}
