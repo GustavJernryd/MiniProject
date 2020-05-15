@@ -34,7 +34,6 @@ public class EnemyAI : MonoBehaviour
         if (GameManager.instance.gameState == GameState.Running && GameManager.instance.oldGameState == GameState.Countdown)
         {
             ChangeState();
-            print("ChangeState");
         }
         if(GameManager.instance.gameState == GameState.Menu && GameManager.instance.oldGameState == GameState.Running)
         {

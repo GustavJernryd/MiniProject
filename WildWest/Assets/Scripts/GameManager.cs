@@ -49,6 +49,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Win()
+    {
+        gameState = GameState.Menu;
+        CameraManager.instance.PlayPanningAnimation();
+        foreach (Image i in canvas.GetComponentsInChildren<Image>())
+        {
+            i.enabled = true;
+        }
+        Transform t = canvas.transform.Find("WinText");
+        t.gameObject.SetActive(true);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -67,14 +79,14 @@ public class GameManager : MonoBehaviour
                     {
                         i.enabled = false;
                     }
+                    Transform t = canvas.transform.Find("WinText");
+                    t.gameObject.SetActive(false);
                 }
                 break;
             case GameState.Countdown:
-                Debug.Log("RotateAnim");
                 if (firstTransition)
                 {
                     CameraManager.instance.StartRotateAnimation();
-                    Debug.Log("RotateAnim");
                     firstTransition = false;
                 }
                 timeElapsed += Time.deltaTime;
