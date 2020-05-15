@@ -7,7 +7,6 @@ public class EnemyAI : MonoBehaviour
     private MovingState currentState;
     private Vector3 destination, leftBoundary, rightBoundary;
     private float timeElapsed, timeLimit;
-    private Vector3 startPosition;
     [SerializeField] private float randomRangeMin;
     [SerializeField] private float randomRangeMax;
     [SerializeField] private float speed;
@@ -16,7 +15,6 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         destination = transform.position;
-        startPosition = transform.position;
         leftBoundary = transform.position;
         leftBoundary.x -= 10;
         rightBoundary = transform.position;
@@ -31,34 +29,23 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         //För testning och första ändring av MovingState. Kommer ersättas av nedräkningen sen.
-        if (GameManager.instance.gameState == GameState.Running && GameManager.instance.oldGameState == GameState.Countdown)
+        if (Input.GetKeyDown(KeyCode.C))
         {
             ChangeState();
-            print("ChangeState");
         }
-        if(GameManager.instance.gameState == GameState.Menu && GameManager.instance.oldGameState == GameState.Running)
+
+
+        RandomStateChange();
+
+        if(transform.position.x < leftBoundary.x || transform.position.x > rightBoundary.x)
         {
-            transform.position = startPosition;
-            destination = transform.position;
-            timeElapsed = 0;
-            currentState = MovingState.Idle;
+            ChangeState();
+            timeElapsed -= timeLimit;
         }
 
+        ChangeDirection();
 
-        if(GameManager.instance.gameState == GameState.Running)
-        {
-            RandomStateChange();
-
-            if(transform.position.x < leftBoundary.x || transform.position.x > rightBoundary.x)
-            {
-                ChangeState();
-                timeElapsed -= timeLimit;
-            }
-
-            ChangeDirection();
-
-            transform.position = destination;
-        }
+        transform.position = destination;
     }
 
     //Flyttar objektet i en riktning beroende på vilket MovingState den är i.
