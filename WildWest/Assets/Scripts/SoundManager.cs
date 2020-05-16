@@ -15,6 +15,9 @@ public class SoundManager : MonoBehaviour
     private float pitchLow = 0.95f;
     private float pitchHigh = 1.05f;
 
+    [Header("MixerToUse")]
+    [SerializeField] AudioMixer mixer;
+    [SerializeField] AudioMixerSnapshot[] snapshots;
 
     void Awake()
     {
@@ -39,6 +42,10 @@ public class SoundManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
         }
+    }
+
+    void Start()
+    {
     }
 
     public void Play(string name)   //metoden som kallas på när man vill att ett ljudclip ska spelas
@@ -68,5 +75,28 @@ public class SoundManager : MonoBehaviour
         s.source.pitch = UnityEngine.Random.Range(pitchLow, pitchHigh);
         float vol = UnityEngine.Random.Range(volLow, volHigh);
         s.source.PlayOneShot(s.clip, vol);
+        
     }
+
+    public void StopPlaying()
+    {
+        float[] weight;
+        weight = new float[2];
+        weight[0] = 0.0f;
+        weight[1] = 1.0f;
+
+        mixer.TransitionToSnapshots(snapshots, weight, 1.0f);
+    }
+
+    public void ContinuePlaying()
+    {
+        float[] weight;
+        weight = new float[2];
+        weight[0] = 1.0f;
+        weight[1] = 0.0f;
+
+        mixer.TransitionToSnapshots(snapshots, weight, 0.3f);
+    }
+
+    
 }
