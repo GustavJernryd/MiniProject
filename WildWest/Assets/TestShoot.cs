@@ -28,7 +28,7 @@ public class TestShoot : MonoBehaviour
                 bulletObject.transform.forward = playerCamera.transform.forward;
 
                 SoundManager.instance.Playvaryingsound("GunShot");
-                animator.Play("Revolver_Fire_Animation", 0, 0f);
+                animator.Play("Fire", 0, 0f);
             }
         }
     }
