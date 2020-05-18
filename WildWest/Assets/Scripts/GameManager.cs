@@ -61,6 +61,18 @@ public class GameManager : MonoBehaviour
         t.gameObject.SetActive(true);
     }
 
+    public void Lose()
+    {
+        gameState = GameState.Menu;
+        CameraManager.instance.PlayPanningAnimation();
+        foreach (Image i in canvas.GetComponentsInChildren<Image>())
+        {
+            i.enabled = true;
+        }
+        Transform t = canvas.transform.Find("LoseText");
+        t.gameObject.SetActive(true);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -79,8 +91,10 @@ public class GameManager : MonoBehaviour
                     {
                         i.enabled = false;
                     }
-                    Transform t = canvas.transform.Find("WinText");
-                    t.gameObject.SetActive(false);
+                    Transform tWin = canvas.transform.Find("WinText");
+                    tWin.gameObject.SetActive(false);
+                    Transform tLose = canvas.transform.Find("LoseText");
+                    tLose.gameObject.SetActive(false);
                 }
                 break;
             case GameState.Countdown:
