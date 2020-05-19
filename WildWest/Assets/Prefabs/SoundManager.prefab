@@ -77,6 +77,6 @@ MonoBehaviour:
   - name: GunShot
     clip: {fileID: 8300000, guid: 4ed6c940941166344bae58480b167132, type: 3}
     mixer: {fileID: 24300002, guid: 103d158933687bc44a3013ab6a30303f, type: 2}
-    volume: 1
+    volume: 0.201
     pitch: 1
     source: {fileID: 0}
