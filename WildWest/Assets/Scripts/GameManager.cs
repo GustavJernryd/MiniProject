@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
         oldGameState = GameState.Menu;
         canvas = GameObject.Find("Canvas_Countdown");
         canvas.SetActive(true);
+        foreach (Image i in canvas.GetComponentsInChildren<Image>())
+        {
+            i.enabled = true;
+        }
         canvas.GetComponentInChildren<Text>().enabled = false;
         text = canvas.GetComponentInChildren<Text>();
      }
