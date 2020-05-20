@@ -67,6 +67,9 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.Menu;
         CameraManager.instance.PlayPanningAnimation();
+        SoundManager.instance.Playvaryingsound("GameOver");
+        SoundManager.instance.StopPlaying();
+
         foreach (Image i in canvas.GetComponentsInChildren<Image>())
         {
             i.enabled = true;
