@@ -145,6 +145,7 @@ public class GameManager : MonoBehaviour
                     {
                         i.enabled = true;
                     }
+                    ScoreManager.instance.ResetScore();
                 }
                 break;
         }
