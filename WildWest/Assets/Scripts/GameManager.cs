@@ -85,6 +85,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         
         oldGameState = gameState;
         switch (gameState)
@@ -137,7 +141,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
             case GameState.Running:
-                if (Input.GetKeyDown(KeyCode.Escape))
+                if (Input.GetKeyDown(KeyCode.Return))
                 {
                     gameState = GameState.Menu;
                     CameraManager.instance.PlayPanningAnimation();

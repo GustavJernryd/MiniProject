@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/WildWest_V3.0.unity
+    guid: d6fa5c0599eabee45bda2fc2225845a9
   m_configObjects: {}
