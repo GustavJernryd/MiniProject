@@ -53,6 +53,8 @@ public class GameManager : MonoBehaviour
     {
         gameState = GameState.Menu;
         CameraManager.instance.PlayPanningAnimation();
+        SoundManager.instance.Playvaryingsound("Win");
+        SoundManager.instance.StopPlaying();
         foreach (Image i in canvas.GetComponentsInChildren<Image>())
         {
             i.enabled = true;
@@ -101,6 +103,7 @@ public class GameManager : MonoBehaviour
                 if (firstTransition)
                 {
                     CameraManager.instance.StartRotateAnimation();
+                    SoundManager.instance.ContinuePlaying();
                     firstTransition = false;
                 }
                 timeElapsed += Time.deltaTime;

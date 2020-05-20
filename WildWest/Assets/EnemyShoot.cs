@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class EnemyShoot : MonoBehaviour
 {
     GameObject player;
@@ -10,6 +11,8 @@ public class EnemyShoot : MonoBehaviour
     Camera enemyCamera;
     Transform spawnPosition;
     float timeElapsed, timeLimit;
+    
+    AudioSource gunShotSound;
 
     
     // Start is called before the first frame update
@@ -20,7 +23,7 @@ public class EnemyShoot : MonoBehaviour
         enemyCamera = gameObject.GetComponentInChildren<Camera>();
         timeElapsed = 0;
         timeLimit = 2;
-        
+        gunShotSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -43,5 +46,6 @@ public class EnemyShoot : MonoBehaviour
         GameObject bulletObject = Instantiate(bulletPrefab);
         bulletObject.transform.position = spawnPosition.transform.position;
         bulletObject.transform.forward = enemyCamera.transform.forward;
+        gunShotSound.Play();
     }
 }
